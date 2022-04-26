@@ -1,56 +1,79 @@
 ﻿using System;
+using Player;
+using Stephan;
 using UnityEngine;
 
-internal class StageSwitcher : MonoBehaviour
+namespace StageController
 {
-    [SerializeField] private Player _player;
-    [SerializeField] private Stephan _stephan;
-    [SerializeField] private ResourceManager _resourceManager;
-    [SerializeField] private FoodSpawner _foodSpawner;
-
-    public Stage CurrentStage { get; private set; }
-    public SearchForStephanStage SearchForStephanStage { get; private set; }
-    public SearchForFoodStage SearchForFoodStage { get; private set; }
-    
-    public event Action StephanHidden;
-
-    private void Awake()
+    internal class StageSwitcher : MonoBehaviour
     {
-        InitializeStages();
-        SetInitialStage(SearchForFoodStage);
-        _resourceManager = _player.GetComponent<ResourceManager>();
+        [SerializeField] private PlayerEntity _player;
+        [SerializeField] private StephanEntity _stephan;
+        [SerializeField] private StephanData _data;
+        [SerializeField] private ResourceManager _resourceManager;
+        [SerializeField] private FoodSpawner _foodSpawner;
 
-        _stephan.StepanHidden += () =>
+        private float _currentFoodAmount;
+
+        public Stage CurrentStage { get; private set; }
+        public SearchForStephanStage SearchForStephanStage { get; private set; }
+        public SearchForFoodStage SearchForFoodStage { get; private set; }
+        public EndGameStage EndGameStage { get; private set; }
+
+        public event Action StephanHidden;
+        public event Action<Type> StageSwitched;
+        public event Action GameEnded;
+
+        private void Awake()
         {
-            CurrentStage.OnExit();
-            CurrentStage = SearchForStephanStage;
-            CurrentStage.OnEnter();
-            StephanHidden?.Invoke();
-        };
+            InitializeStages();
+            SetInitialStage(SearchForFoodStage);
+            _resourceManager = _player.GetComponent<ResourceManager>();
+
+            _stephan.StepanHidden += () =>
+            {
+                CurrentStage.OnExit();
+                CurrentStage = SearchForStephanStage;
+                CurrentStage.OnEnter();
+                StephanHidden?.Invoke();
+                StageSwitched?.Invoke(typeof(SearchForStephanStage));
+            };
         
-        _player.StephanFound += () =>
+            _player.StephanFound += () =>
+            {
+                CurrentStage.OnExit();
+                CurrentStage = SearchForFoodStage;
+                CurrentStage.OnEnter();
+                StageSwitched?.Invoke(typeof(SearchForStephanStage));
+            };
+
+            _stephan.MaxSizeAchieved += () =>
+            {
+                CurrentStage.OnExit();
+                CurrentStage = EndGameStage;
+                CurrentStage.OnEnter();
+                GameEnded?.Invoke();
+            };
+
+            _resourceManager.FoodTaken += () =>
+            {
+                CurrentStage.OnExit();
+                CurrentStage.OnEnter();
+            };
+        }
+
+        private void InitializeStages()
         {
-            CurrentStage.OnExit();
-            CurrentStage = SearchForFoodStage;
-            CurrentStage.OnEnter();
-        };
+            SearchForFoodStage = new SearchForFoodStage(_foodSpawner);
+            SearchForStephanStage = new SearchForStephanStage(_foodSpawner);
+            EndGameStage = new EndGameStage(_foodSpawner);
+        }
 
-        _resourceManager.FoodTaken += (value) =>
+        private void SetInitialStage(Stage initialStage)
         {
-            CurrentStage.OnExit();
+            CurrentStage = initialStage;
             CurrentStage.OnEnter();
-        };
-    }
-
-    private void InitializeStages()
-    {
-        SearchForFoodStage = new SearchForFoodStage(_foodSpawner);
-        SearchForStephanStage = new SearchForStephanStage(_foodSpawner);
-    }
-
-    private void SetInitialStage(Stage initialStage)
-    {
-        CurrentStage = initialStage;
-        CurrentStage.OnEnter();
+            StageSwitched?.Invoke(CurrentStage.GetType());
+        }
     }
 }

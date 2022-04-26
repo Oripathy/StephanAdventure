@@ -1,41 +1,53 @@
-﻿using System;
+﻿using Player;
 using UnityEngine;
 
-internal class CameraMover : MonoBehaviour
+namespace Camera
 {
-    [SerializeField] private LayerMask _transparencySphereMask;
-    [SerializeField] private GameObject _transparencySphere;
+    internal class CameraMover : MonoBehaviour
+    {
+        [SerializeField] private LayerMask _includedLayers;
+        [SerializeField] private GameObject _transparencySphere;
     
-    private Transform _player;
-    private Vector3 _offset;
+        private Transform _player;
+        private Vector3 _offset;
+        private string _transparencySphereTag = "TransparencySphere";
 
-    private void Awake()
-    {
-        _player = FindObjectOfType<Player>().GetComponent<Transform>();
-        _offset = new Vector3(0f, 15f, -6f);
-        transform.Rotate(0f, 0f, 0f, Space.World);
-    }
-
-    private void Update()
-    {
-        if (!_player)
-            return;
-
-        transform.position = new Vector3(_player.position.x + _offset.x, _player.position.y + _offset.y,
-            _player.position.z + _offset.z);
-        CastRayToTransparencySphere();
-    }
-
-    private void CastRayToTransparencySphere()
-    {
-        if (Physics.Raycast(transform.position,
-                (_transparencySphere.transform.position - transform.position).normalized, out var hit,
-                Mathf.Infinity))
+        private void Awake()
         {
-            if (hit.transform.tag == "Player")
-                _transparencySphere.transform.localScale = new Vector3(0f, 0f, 0f);
+            _player = FindObjectOfType<PlayerEntity>().GetComponent<Transform>();
+            _offset = new Vector3(0f, 10f, -6f);
+            transform.Rotate(60f, 0f, 0f, Space.World);
+        }   
+
+        private void Update()
+        {
+            if (!_player)
+                return;
+
+            FollowPlayer();
+            CastRayToTransparencySphere();
+        }
+
+        private void CastRayToTransparencySphere()
+        {
+            if (Physics.Raycast(transform.position,
+                    (_transparencySphere.transform.position - transform.position).normalized, out var hit,
+                    Mathf.Infinity, _includedLayers))
+            {
+                if (hit.collider.CompareTag("Player"))
+                    _transparencySphere.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+                else
+                    _transparencySphere.transform.localScale = new Vector3(4f, 4f, 4f);
+            }
+        }
+
+        private void FollowPlayer()
+        {
+            if (_player.position.z > 1.7 && _player.position.z < 44)
+                transform.position = new Vector3(_player.position.x + _offset.x, _offset.y, _player.position.z + _offset.z);
             else
-                _transparencySphere.transform.localScale = new Vector3(4f, 4f, 4f);
+                transform.position = new Vector3(_player.position.x + _offset.x, _offset.y, transform.position.z);
+
         }
     }
 }

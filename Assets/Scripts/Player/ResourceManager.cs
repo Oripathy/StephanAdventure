@@ -1,15 +1,31 @@
 ﻿using System;
 using UnityEngine;
+using Items;
 
-internal class ResourceManager : MonoBehaviour
+namespace Player
 {
-    private float _foodAmount;
-    
-    public event Action<float> FoodTaken;
-
-    private void OnTriggerEnter(Collider other)
+    internal class ResourceManager : MonoBehaviour
     {
-        if (other.TryGetComponent<Food>(out var food))
-            FoodTaken?.Invoke(food.FoodAmount);
+        [SerializeField] private Transform _torsoHoldingPoint;
+        [SerializeField] private float _foodAmount;
+
+        public Item Item { get; private set; }
+
+        public event Action FoodTaken;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent<Food>(out var food))
+                FoodTaken?.Invoke();
+
+            if (other.TryGetComponent<Item>(out var item))
+            {
+                if (Item != null)
+                    return;
+
+                Item = item;
+                Item.OnPickedUp(_torsoHoldingPoint);
+            }
+        }
     }
 }

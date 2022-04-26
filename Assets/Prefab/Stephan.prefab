@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 6744808622642587641}
   - component: {fileID: 5596103192480935191}
   - component: {fileID: 5702698901223868919}
-  m_Layer: 0
+  - component: {fileID: 2867081067459724267}
+  - component: {fileID: 3662095141707834686}
+  m_Layer: 9
   m_Name: Stephan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +56,8 @@ MonoBehaviour:
   _stephanModel: {fileID: 9212698482653362013}
   _hiddenSpots: []
   _navMeshAgent: {fileID: 5702698901223868919}
-  _stephanSize: 0
+  _rigidbody: {fileID: 0}
+  _stephanAddedSize: 0
 --- !u!114 &5596103192480935191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +72,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: c5cbafbb3bbc9e547b3137cd3b0b6e44, type: 2}
   _stephan: {fileID: 6744808622642587641}
-  _fearAmount: 0
 --- !u!195 &5702698901223868919
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -80,11 +82,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.27
-  m_Speed: 5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 300
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -92,6 +94,35 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &2867081067459724267
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982471854699957415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.41818905, y: 0.8673025, z: 0.92568755}
+  m_Center: {x: 0.0032715797, y: 0.45622787, z: 0.11081803}
+--- !u!54 &3662095141707834686
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982471854699957415}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &9212698482653327861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -682,7 +713,7 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 756b0c574f380324a85262e736c0418b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8bd50fa7f84445f499085af2faf790c8, type: 2}
+      objectReference: {fileID: 9100000, guid: 2f6494a8a6155a74b9e5ad3e7eafe182, type: 2}
     - target: {fileID: 13700000, guid: 756b0c574f380324a85262e736c0418b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8858633b9626471495fcefda8aa14aea, type: 3}
   m_Name: Stephan Data
   m_EditorClassIdentifier: 
-  _fearAmountLimit: 1
+  _fearAmountLimit: 100
   _maxSize: 10
+  _fearAmountDecrease: 1

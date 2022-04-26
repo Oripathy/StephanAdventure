@@ -1,22 +1,23 @@
-﻿using System.Collections;
-
-internal abstract class Stage
+﻿namespace StageController
 {
-    private protected FoodSpawner _foodSpawner;
-    
-    public Stage(FoodSpawner foodSpawner)
+    internal abstract class Stage
     {
-        _foodSpawner = foodSpawner;
-    }
+        private protected FoodSpawner _foodSpawner;
     
-    public virtual void OnEnter()
-    {
+        public Stage(FoodSpawner foodSpawner)
+        {
+            _foodSpawner = foodSpawner;
+        }
+    
+        public virtual void OnEnter()
+        {
         
-    }
+        }
 
-    public virtual void OnExit()
-    {
+        public virtual void OnExit()
+        {
         
-    }
+        }
     
+    }
 }

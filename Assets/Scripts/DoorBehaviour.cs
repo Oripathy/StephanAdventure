@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using Player;
 using UnityEngine;
 
 internal class DoorBehaviour : MonoBehaviour
@@ -13,7 +13,7 @@ internal class DoorBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent<Player>(out var player))
+        if (other.gameObject.TryGetComponent<PlayerEntity>(out var player))
         {
             if (_currentCoroutine != null)
                 StopCoroutine(_currentCoroutine);
@@ -24,7 +24,7 @@ internal class DoorBehaviour : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.TryGetComponent<Player>(out var player))
+        if (other.gameObject.TryGetComponent<PlayerEntity>(out var player))
         {
             if (_currentCoroutine != null)
                 StopCoroutine(_currentCoroutine);

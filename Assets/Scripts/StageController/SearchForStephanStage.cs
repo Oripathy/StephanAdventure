@@ -1,8 +1,19 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 
-internal class SearchForStephanStage : Stage
+namespace StageController
 {
-    public SearchForStephanStage(FoodSpawner foodSpawner) : base(foodSpawner)
+    internal class SearchForStephanStage : Stage
     {
+        public SearchForStephanStage(FoodSpawner foodSpawner) : base(foodSpawner)
+        {
+        }
+
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            
+            if (Time.timeScale != 1f)
+                Time.timeScale = 1f;
+        }
     }
 }

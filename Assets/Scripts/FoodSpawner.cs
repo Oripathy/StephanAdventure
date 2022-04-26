@@ -19,12 +19,12 @@ internal class FoodSpawner : MonoBehaviour
     private int SelectSpawnPoint()
     {
         if (_previousFoodSpawnPoint == null)
-            return (int)Random.Range(0f, _foodSpawnPoints.Count - 1);
+            return (int)Random.Range(0f, _foodSpawnPoints.Count);
 
-        var index = (int)Random.Range(0f, _foodSpawnPoints.Count - 1);
+        var index = (int)Random.Range(0f, _foodSpawnPoints.Count);
         
         while (_foodSpawnPoints[index] == _previousFoodSpawnPoint)
-            index = (int)Random.Range(0f, _foodSpawnPoints.Count - 1);
+            index = (int)Random.Range(0f, _foodSpawnPoints.Count);
 
         return index;
     }
