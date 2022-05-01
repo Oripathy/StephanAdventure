@@ -655,9 +655,6 @@
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Recorder.Editor">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
@@ -667,8 +664,8 @@
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.ProBuilder.AddOns.Editor">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
  <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -676,50 +673,17 @@
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
- <Reference Include="Unity.ProBuilder">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ProBuilder.Editor">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Rider.Editor">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PlasticSCM.Editor">
  <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.ProGrids.Editor">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+ <Reference Include="Unity.Rider.Editor">
+ <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Cinemachine">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.cinemachine.editor">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ProGrids">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Recorder">
- <HintPath>D:/UnityHub/Looper/StephanAdventure/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
