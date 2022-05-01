@@ -9,7 +9,7 @@ ScriptsOnlyBuild:
     - Food
     - FoodSpawner
     - Items.Decoy
-    - MainMenu.EndGameBehaviour
+    - MainMenu.EndGameMenuBehaviour
     - MainMenu.MainMenuBehaviour
     - Player.PlayerData
     - Player.PlayerEntity
@@ -111,53 +111,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2400}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 2872}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 2946}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 3010}
+      Script: {instanceID: 3012}
     - Class: 114
-      Script: {instanceID: 3074}
+      Script: {instanceID: 3076}
     - Class: 114
-      Script: {instanceID: 3162}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3240}
+      Script: {instanceID: 3242}
     - Class: 114
-      Script: {instanceID: 3290}
+      Script: {instanceID: 3292}
     - Class: 114
-      Script: {instanceID: 3484}
+      Script: {instanceID: 3374}
     - Class: 114
-      Script: {instanceID: 3538}
+      Script: {instanceID: 3488}
     - Class: 114
-      Script: {instanceID: 3690}
+      Script: {instanceID: 3542}
     - Class: 114
-      Script: {instanceID: 3808}
+      Script: {instanceID: 3694}
     - Class: 114
-      Script: {instanceID: 3892}
+      Script: {instanceID: 3814}
     - Class: 114
-      Script: {instanceID: 4090}
+      Script: {instanceID: 3898}
     - Class: 114
-      Script: {instanceID: 4180}
+      Script: {instanceID: 4096}
     - Class: 114
-      Script: {instanceID: 4298}
+      Script: {instanceID: 4186}
     - Class: 114
-      Script: {instanceID: 4350}
+      Script: {instanceID: 4306}
     - Class: 114
-      Script: {instanceID: 5222}
+      Script: {instanceID: 4358}
     - Class: 114
-      Script: {instanceID: 5898}
+      Script: {instanceID: 4790}
     - Class: 114
-      Script: {instanceID: 6028}
+      Script: {instanceID: 5236}
     - Class: 114
-      Script: {instanceID: 6190}
+      Script: {instanceID: 5684}
     - Class: 114
-      Script: {instanceID: 37616}
+      Script: {instanceID: 5914}
     - Class: 114
-      Script: {instanceID: 60106}
+      Script: {instanceID: 6044}
     - Class: 114
-      Script: {instanceID: 694502}
+      Script: {instanceID: 6206}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -184,6 +184,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 238
       Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 850595691
+      Script: {instanceID: 0}
     Assets/Scenes/MainMenuScene.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -205,11 +209,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
@@ -226,29 +234,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2400}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 2552}
     - Class: 114
-      Script: {instanceID: 3010}
+      Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 3240}
+      Script: {instanceID: 3012}
     - Class: 114
-      Script: {instanceID: 3354}
+      Script: {instanceID: 3242}
     - Class: 114
-      Script: {instanceID: 3538}
+      Script: {instanceID: 3356}
     - Class: 114
-      Script: {instanceID: 3690}
+      Script: {instanceID: 3542}
     - Class: 114
-      Script: {instanceID: 31318}
+      Script: {instanceID: 3694}
     - Class: 114
-      Script: {instanceID: 31328}
+      Script: {instanceID: 3712}
     - Class: 114
-      Script: {instanceID: 31334}
+      Script: {instanceID: 4270}
     - Class: 114
-      Script: {instanceID: 37606}
+      Script: {instanceID: 4902}
     - Class: 114
-      Script: {instanceID: 37616}
+      Script: {instanceID: 4990}
     - Class: 114
-      Script: {instanceID: 37630}
+      Script: {instanceID: 5684}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -270,6 +278,10 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -470,6 +482,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
     className: PlaymodeTestsController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UI.MainMenu
+    className: EasyDifficultyButton
   - hash:
       serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
@@ -700,6 +718,12 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
+      Hash: bbe36bc9f8929ff875721842fd51a48a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MainMenu
+    className: EndGameMenuBehaviour
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Cinemachine.dll
     namespaceName: 
@@ -782,6 +806,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 84ca9fceccb479b16860137b4e11a12c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MainMenu
+    className: MainMenuBehaviour
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -890,6 +920,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineFramingTransposer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UI.MainMenu
+    className: NormalDifficultyButton
   - hash:
       serializedVersion: 2
       Hash: 8963690ef6f6b05ce03bfd8b5c26e20c
@@ -1018,6 +1054,12 @@ ScriptsOnlyBuild:
     className: CinemachineTrackedDolly
   - hash:
       serializedVersion: 2
+      Hash: a388364c980757afb37deb6879e500f2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UI
+    className: EndGameUI
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1030,10 +1072,22 @@ ScriptsOnlyBuild:
     className: PostProcessEffectSettings
   - hash:
       serializedVersion: 2
+      Hash: 1a60f7fd0149f9af69c7fcd86111b9ac
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UI.MainMenu
+    className: BackButton
+  - hash:
+      serializedVersion: 2
       Hash: e6d75f1a9bc0c6f7085df0baa077e688
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineGroupComposer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UI.MainMenu
+    className: HardDifficultyButton
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1168,6 +1222,12 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UI.MainMenu
+    className: QuitButton
+  - hash:
+      serializedVersion: 2
       Hash: c80bc562de10fdbf8b2e9bcb89d80421
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1284,50 +1344,14 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: UI.MainMenu
-    className: EasyDifficultyButton
+    namespaceName: StageController
+    className: DifficultySelector
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 30f29d154d678b28d32d7aacc60bf46f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: UI.MainMenu
-    className: NormalDifficultyButton
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: UI.MainMenu
-    className: HardDifficultyButton
-  - hash:
-      serializedVersion: 2
-      Hash: 1a60f7fd0149f9af69c7fcd86111b9ac
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: UI.MainMenu
-    className: BackButton
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: UI.MainMenu
-    className: QuitButton
-  - hash:
-      serializedVersion: 2
-      Hash: 84ca9fceccb479b16860137b4e11a12c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: MainMenu
-    className: MainMenuBehaviour
-  - hash:
-      serializedVersion: 2
-      Hash: a388364c980757afb37deb6879e500f2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: UI
-    className: EndGameUI
-  - hash:
-      serializedVersion: 2
-      Hash: bbe36bc9f8929ff875721842fd51a48a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: MainMenu
-    className: EndGameBehaviour
+    namespaceName: Enemies
+    className: EnemySpawner
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenuScene.unity

@@ -29,13 +29,6 @@ namespace Enemies.Kyle
             _stateMachine.CurrentState.FixedUpdatePass();
         }
 
-        private void OnAnimatorMove()
-        {
-            Vector3 position = _animator.rootPosition;
-            position.y = _navMeshAgent.nextPosition.y;
-            transform.position = position;
-        }
-
         public void Provoke(Vector3 decoyPosition) => Provoked?.Invoke(decoyPosition);
 
         public void Freeze(float duration) => Frozen?.Invoke(duration);

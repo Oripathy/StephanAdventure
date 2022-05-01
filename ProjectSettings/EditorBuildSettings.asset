@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: b04d543112a87db4b89e00673ad7480c
   - enabled: 1
-    path: Assets/Scenes/EasyDifficultyLevel.unity
+    path: Assets/Scenes/Fabric.unity
     guid: 22da1fe731c150d46b62bc314594823d
   m_configObjects: {}

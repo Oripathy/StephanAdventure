@@ -12,6 +12,7 @@ namespace UI
 
         private void Awake()
         {
+            OnFearAmountChanged(0f);
             _fearBehaviour.FearAmountChanged += OnFearAmountChanged;
         }
 

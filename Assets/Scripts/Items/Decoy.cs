@@ -26,6 +26,8 @@ namespace Items
                 if (target.TryGetComponent<IProvocable>(out var provocable))
                     provocable.Provoke(transform.position);
             }
+            
+            Destroy(gameObject);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Enemies.BioBot
         {
             _stateMachine = new BioBotStateMachine(this, _data);
         }
-
+        
         public void Provoke(Vector3 decoyPosition) => Provoked?.Invoke(decoyPosition);
 
         public void Freeze(float duration) => Frozen?.Invoke(duration);

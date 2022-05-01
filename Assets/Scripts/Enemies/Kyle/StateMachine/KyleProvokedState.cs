@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Enemies.Kyle.StateMachine
 {
@@ -9,7 +8,6 @@ namespace Enemies.Kyle.StateMachine
         private Vector3 _decoyPosition;
         private Vector3 _previousPosition;
         private bool _isProvoked;
-        private Vector2 _smoothDeltaPosition;
 
         public KyleProvokedState(KyleStateMachine stateMachine, KyleEntity kyle, KyleData data, Vector3 decoyPosition,
             string animationBoolName) : base(stateMachine, kyle, data, animationBoolName)
@@ -33,7 +31,7 @@ namespace Enemies.Kyle.StateMachine
         public override void UpdatePass()
         {
             base.UpdatePass();
-            MoveTowardsDecoy();
+            MoveNavMeshAgent();
         }
 
         public override void OnExit()
@@ -75,7 +73,7 @@ namespace Enemies.Kyle.StateMachine
             _isProvoked = false;
         }
 
-        private void MoveTowardsDecoy()
+        private void MoveNavMeshAgent()
         {
             Vector3 worldDeltaPosition = _kyle.NavMeshAgent.nextPosition - _kyle.transform.position;
             RotateAt(_kyle.NavMeshAgent.nextPosition);

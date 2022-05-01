@@ -1,10 +1,11 @@
-﻿namespace Enemies.Kyle
+﻿using UnityEngine;
+
+namespace Enemies.Kyle
 {
     internal class KyleScareSphere : ScareSphere
     {
-        private protected override void Awake()
-        {
-            FearAmountToReceive = 1f;
-        }
+        [SerializeField] private KyleData _data;
+
+        private protected override void SetFearAmountToReceive() => FearAmountToReceive = _data.FearAmountToReceive;
     }
 }

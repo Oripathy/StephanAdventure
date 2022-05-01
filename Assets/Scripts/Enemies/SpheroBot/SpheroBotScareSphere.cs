@@ -1,10 +1,11 @@
-﻿namespace Enemies.SpheroBot
+﻿using UnityEngine;
+
+namespace Enemies.SpheroBot
 {
     internal class SpheroBotScareSphere : ScareSphere
     {
-        private protected override void Awake()
-        {
-            FearAmountToReceive = 1f;
-        }
+        [SerializeField] private SpheroBotData _data;
+
+        private protected override void SetFearAmountToReceive() => FearAmountToReceive = _data.FearAmountToReceive;
     }
 }

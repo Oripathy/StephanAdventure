@@ -26,11 +26,9 @@ namespace Enemies.BioBot.StateMachine
         public override void FixedUpdatePass()
         {
             base.FixedUpdatePass();
-            _bioBot.transform.position = MoveToPoint();
-            _bioBot.transform.LookAt(new Vector3(_movePointsQueue.Peek().x, _bioBot.transform.position.y,
-                _movePointsQueue.Peek().z));
+            RotateAt(_movePointsQueue.Peek());
 
-            if (MoveToPoint() == _movePointsQueue.Peek())
+            if (Vector3.Distance(_bioBot.transform.position, _movePointsQueue.Peek()) <= 0.1f)
             {
                 _movePointsQueue.Dequeue();
                 _movePointsQueue.Enqueue(_bioBot.transform.position);
@@ -38,10 +36,13 @@ namespace Enemies.BioBot.StateMachine
             }
         }
 
-        private Vector3 MoveToPoint()
+        private void RotateAt(Vector3 point)
         {
-            return Vector3.MoveTowards(_bioBot.transform.position, _movePointsQueue.Peek(),
-                _data.MovementSpeed * Time.deltaTime);
+            Vector3 relativePosition = new Vector3(point.x - _bioBot.transform.position.x, 0f,
+                point.z - _bioBot.transform.position.z);
+            Quaternion rotation = Quaternion.LookRotation(relativePosition, Vector3.up);
+            _bioBot.transform.rotation = Quaternion.RotateTowards(_bioBot.transform.rotation, rotation,
+                _data.RotationSpeed * Time.deltaTime);
         }
 
         public override BioBotState SetNextState()

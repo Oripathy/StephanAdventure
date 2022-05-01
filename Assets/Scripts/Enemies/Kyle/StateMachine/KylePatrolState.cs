@@ -1,9 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Numerics;
-using TMPro;
 using UnityEngine;
-using Quaternion = UnityEngine.Quaternion;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Enemies.Kyle.StateMachine
 {
@@ -31,10 +27,8 @@ namespace Enemies.Kyle.StateMachine
         public override void FixedUpdatePass()
         {
             base.FixedUpdatePass();
-            RotateAt();
-            //_kyle.transform.position = MoveToPoint();
+            RotateAt(_movePointsQueue.Peek());
 
-            //if (MoveToPoint() == _movePointsQueue.Peek())
              if (Vector3.Distance(_kyle.transform.position, _movePointsQueue.Peek()) <= 0.2f)
             {
                 _movePointsQueue.Dequeue();
@@ -51,16 +45,10 @@ namespace Enemies.Kyle.StateMachine
             return this;
         }
 
-        private Vector3 MoveToPoint()
+        private void RotateAt(Vector3 point)
         {
-            return Vector3.MoveTowards(_kyle.transform.position, _movePointsQueue.Peek(),
-                _data.MovementSpeed * Time.deltaTime);
-        }
-
-        private void RotateAt()
-        {
-            Vector3 relativePosition = new Vector3(_movePointsQueue.Peek().x - _kyle.transform.position.x, 0f,
-                _movePointsQueue.Peek().z - _kyle.transform.position.z);
+            Vector3 relativePosition = new Vector3(point.x - _kyle.transform.position.x, 0f,
+                point.z - _kyle.transform.position.z);
             Quaternion rotation = Quaternion.LookRotation(relativePosition, Vector3.up);
             _kyle.transform.rotation = Quaternion.RotateTowards(_kyle.transform.rotation, rotation,
                 _data.RotationSpeed * Time.deltaTime);

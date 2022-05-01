@@ -28,8 +28,8 @@ namespace Player
         {
             if (!_isUIInputActive)
             {
-                _moveDirection.x = Input.GetAxis("Horizontal");
-                _moveDirection.z = Input.GetAxis("Vertical");
+                _moveDirection.x = Input.GetAxisRaw("Horizontal");
+                _moveDirection.z = Input.GetAxisRaw("Vertical");
 
                 if (_moveDirection.magnitude > 1)
                     _moveDirection.Normalize();

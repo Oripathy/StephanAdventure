@@ -20,13 +20,13 @@ namespace Enemies.SpheroBot.StateMachine
             InitializeStates();
             SetInitialState(PatrolState);
             _spheroBot.Provoked += OnProvoked;
+            _spheroBot.TargetReceived += OnTargetReceived;
         }
 
         private void InitializeStates()
         {
             IdleState = new SpheroBotIdleState(this, _data, _spheroBot, "Idle");
             PatrolState = new SpheroBotPatrolState(this, _data, _spheroBot, "Move");
-            ActionState = new SpheroBotActionState(this, _data, _spheroBot, "Action");
         }
 
         public void SetInitialState(SpheroBotState initialState)
@@ -53,5 +53,8 @@ namespace Enemies.SpheroBot.StateMachine
 
         private void OnProvoked(Vector3 decoyPosition) =>
             SwitchState(new SpheroBotProvokedState(this, _spheroBot, _data, decoyPosition, "Move"));
+
+        private void OnTargetReceived(Transform target) =>
+            SwitchState(new SpheroBotActionState(this, _data, _spheroBot, "Roll", target));
     }
 }

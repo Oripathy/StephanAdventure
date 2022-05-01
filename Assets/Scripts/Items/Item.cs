@@ -15,7 +15,7 @@ namespace Items
 
         public Rigidbody Rigidbody => _rigidbody;
 
-        public virtual void BeThrown()
+        public void BeThrown()
         {
             StartCoroutine(StartBeingThrown());
         }

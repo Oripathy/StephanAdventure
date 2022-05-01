@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062c7f070ce64b3aa0342b57599d1cac, type: 3}
   m_Name: Sphero Bot Data
   m_EditorClassIdentifier: 
+  _movementSpeed: 2
+  _actionDuration: 4
+  _fearAmountToReceive: 1
+  _actionCooldown: 10

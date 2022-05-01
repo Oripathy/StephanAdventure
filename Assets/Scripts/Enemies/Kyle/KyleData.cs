@@ -7,10 +7,12 @@ namespace Enemies.Kyle
     {
         [SerializeField] private float _movementSpeed = 2f;
         [SerializeField] private float _rotationSpeed = 720f;
+        [SerializeField] private float _fearAmountToReceive = 1f;
         [SerializeField] private float _waitTime = 2f;
 
         public float MovementSpeed => _movementSpeed;
         public float RotationSpeed => _rotationSpeed;
+        public float FearAmountToReceive => _fearAmountToReceive;
         public float WaitTime => _waitTime;
     }
 }
