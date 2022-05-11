@@ -5544,7 +5544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adbbaf3b27434162ba0ed74eb8c71c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _difficultySelector: {fileID: 0}
+  _difficultySelector: {fileID: 11400000, guid: 74c3b6278808a6041908669e1824aafe, type: 2}
 --- !u!1001 &341654096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23235,7 +23235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0886143aed6847e4a04544270450565a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _difficultySelector: {fileID: 0}
+  _difficultySelector: {fileID: 11400000, guid: 74c3b6278808a6041908669e1824aafe, type: 2}
 --- !u!1001 &1552299014
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ namespace Menus
         public override void OnButtonPressed()
         {
             Application.Quit();
-            Debug.Log("Bye");
+            //Debug.Log("Bye");
         }
     }
 }
